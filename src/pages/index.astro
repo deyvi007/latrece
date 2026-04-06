@@ -4,1608 +4,1563 @@ import logoDark from "../assets/logo1.webp";
 import logoLight from "../assets/logo2.webp";
 import navLogo from "../assets/logo.webp";
 import baratiLogo from "../assets/stores/barati.webp";
+import antonellaLogo from "../assets/stores/antonella.webp";
+import belondonLogo from "../assets/stores/belondon.webp";
+import perudecorLogo from "../assets/stores/perudecor.webp";
+import haminaLogo from "../assets/stores/hamina.webp";
 import promo1 from "../assets/promos/promo1.webp";
 import promo2 from "../assets/promos/promo2.webp";
 import promo3 from "../assets/promos/promo3.webp";
 
 const stores = [
-	{
-		name: "Barati",
-		category: "Moda Urbana",
-		icon: baratiLogo,
-		description: "Encuentra lo último en moda urbana con estilo y calidad.",
-		color: "#22c55e",
-		link: "https://www.baratiperu.com/",
-	},
-	{
-		name: "Glow & Beauty",
-		category: "Belleza",
-		icon: "sparkles",
-		description: "Cosmética de lujo y cuidado personal.",
-		color: "#E91E63",
-		link: "#",
-	},
-	{
-		name: "Tech Hub",
-		category: "Tecnología",
-		icon: "cpu",
-		description: "Lo último en gadgets y electrónica.",
-		color: "#00BCD4",
-		link: "#",
-	},
-	{
-		name: "Trece Gourmet",
-		category: "Gastronomía",
-		icon: "utensils",
-		description: "Experiencias culinarias artesanales.",
-		color: "#FF9800",
-		link: "#",
-	},
-	{
-		name: "Home Design",
-		category: "Hogar",
-		icon: "home",
-		description: "Decoración y vanguardia para tu espacio.",
-		color: "#4CAF50",
-		link: "#",
-	},
-	{
-		name: "Sport Elite",
-		category: "Deportes",
-		icon: "trophy",
-		description: "Equipamiento de alto rendimiento.",
-		color: "#2196F3",
-		link: "#",
-	},
+  {
+    name: "Barati",
+    category: "Moda Urbana",
+    icon: baratiLogo,
+    description: "Encuentra lo último en moda urbana con estilo y calidad.",
+    color: "#22c55e",
+    link: "https://www.baratiperu.com/",
+  },
+  {
+    name: "Be London",
+    category: "Ropa",
+    icon: belondonLogo,
+    description: "Encuentra lo último en prendas a la Moda.",
+    color: "#fda4af",
+    link: "https://www.wasi.digital/shop/be-london",
+  },
+  {
+    name: "Peru Decor",
+    category: "Cortinas",
+    icon: perudecorLogo,
+    description: "Venta de todo tipo de cortinas a medida.",
+    color: "#e11d48",
+    link: "https://www.wasi.digital/shop/per-decor",
+  },
+  {
+    name: "Antonella Decoraciones",
+    category: "Cortinas y Decoraciones",
+    icon: antonellaLogo,
+    description: "Venta de todo tipo de cortinas a medida.",
+    color: "#10b981",
+    link: "https://www.wasi.digital/shop/antonella",
+  },
+  {
+    name: "Home Design",
+    category: "Hogar",
+    icon: "home",
+    description: "Decoración y vanguardia para tu espacio.",
+    color: "#4CAF50",
+    link: "#",
+  },
+  {
+    name: "Hamina",
+    category: "Ropa",
+    icon: haminaLogo,
+    description: "Ropa elegante para damas.",
+    color: "#d946ef",
+    link: "https://www.wasi.digital/shop/hamina",
+  },
 ];
 
 const promotions = [
-	{
-		image: promo1,
-		alt: "Gran Apertura - Especial 1",
-		link: "https://wa.me/51919574565",
-	},
-	{
-		image: promo2,
-		alt: "Nuevas Colecciones - Especial 2",
-		link: "#",
-	},
-	{
-		image: promo3,
-		alt: "Ofertas Exclusivas - Especial 3",
-		link: "https://wa.me/51919574565",
-	},
+  {
+    image: promo1,
+    alt: "Gran Apertura - Especial 1",
+    link: "https://wa.me/51919574565",
+  },
+  {
+    image: promo2,
+    alt: "Nuevas Colecciones - Especial 2",
+    link: "#",
+  },
+  {
+    image: promo3,
+    alt: "Ofertas Exclusivas - Especial 3",
+    link: "https://wa.me/51919574565",
+  },
 ];
 
 const currentYear = new Date().getFullYear();
 ---
 
 <html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/webp" href="/favicon.webp" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>LA T13ECE - Centro Comercial Virtual</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Rubik:wght@300;400;500;700&display=swap"
-			rel="stylesheet"
-		/>
-		<style>
-			:root {
-				--primary: #e11d48;
-				--primary-glow: rgba(225, 29, 72, 0.3);
-
-				--bg-dark: #0f172a;
-				--bg-light: #f8fafc;
-				--text-dark: #f8fafc;
-				--text-light: #1e293b;
-				--glass-dark: rgba(15, 23, 42, 0.7);
-				--glass-light: rgba(255, 255, 255, 0.8);
-				--border-dark: rgba(255, 255, 255, 0.1);
-				--border-light: rgba(15, 23, 42, 0.1);
-				--transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-			}
-
-			/* Theme Management */
-			html {
-				scroll-behavior: smooth;
-			}
-
-			html.dark {
-				--bg-current: var(--bg-dark);
-				--text-current: var(--text-dark);
-				--glass-current: var(--glass-dark);
-				--border-current: var(--border-dark);
-			}
-
-			html:not(.dark) {
-				--bg-current: var(--bg-light);
-				--text-current: var(--text-light);
-				--glass-current: var(--glass-light);
-				--border-current: var(--border-light);
-			}
-
-			* {
-				margin: 0;
-				padding: 0;
-				box-sizing: border-box;
-			}
-
-			body {
-				font-family: "Rubik", sans-serif;
-				background-color: var(--bg-current);
-				color: var(--text-current);
-				overflow-x: hidden;
-				transition:
-					background-color 0.5s ease,
-					color 0.5s ease;
-			}
-
-			h1,
-			h2,
-			h3 {
-				font-family: "Nunito Sans", sans-serif;
-				font-weight: 700;
-				letter-spacing: -0.02em;
-			}
-
-			/* Navbar */
-			nav {
-				position: fixed;
-				top: 0;
-				left: 0;
-				right: 0;
-				z-index: 200;
-				padding: 1.5rem 0;
-				background: transparent;
-				transition: var(--transition);
-			}
-
-			nav.scrolled {
-				background: var(--glass-current);
-				backdrop-filter: blur(10px);
-				-webkit-backdrop-filter: blur(10px);
-				border-bottom: 1px solid var(--border-current);
-				padding: 1rem 0;
-			}
-
-			.nav-container {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-			}
-
-			.nav-actions {
-				display: flex;
-				align-items: center;
-				gap: 0.5rem;
-			}
-
-			.nav-menu {
-				display: flex;
-				gap: 2.5rem;
-				list-style: none;
-				margin: 0;
-				padding: 0;
-			}
-
-			.nav-link {
-				text-decoration: none;
-				color: var(--text-current);
-				font-weight: 500;
-				font-size: 1rem;
-				transition: var(--transition);
-				position: relative;
-			}
-
-			.nav-link::after {
-				content: "";
-				position: absolute;
-				bottom: -5px;
-				left: 0;
-				width: 0;
-				height: 2px;
-				background: var(--primary);
-				transition: var(--transition);
-			}
-
-			.nav-link:hover {
-				color: var(--primary);
-			}
-
-			.nav-link:hover::after {
-				width: 100%;
-			}
-
-			/* Hamburger Button */
-			.hamburger {
-				display: none;
-				flex-direction: column;
-				justify-content: center;
-				gap: 5px;
-				width: 42px;
-				height: 42px;
-				background: var(--glass-current);
-				border: 1px solid var(--border-current);
-				border-radius: 12px;
-				cursor: pointer;
-				padding: 0 10px;
-				transition: var(--transition);
-				z-index: 200;
-			}
-
-			.hamburger span {
-				display: block;
-				height: 2px;
-				width: 100%;
-				background: var(--text-current);
-				border-radius: 4px;
-				transition: var(--transition);
-				transform-origin: center;
-			}
-
-			.hamburger.open span:nth-child(1) {
-				transform: translateY(7px) rotate(45deg);
-			}
-			.hamburger.open span:nth-child(2) {
-				opacity: 0;
-				transform: scaleX(0);
-			}
-			.hamburger.open span:nth-child(3) {
-				transform: translateY(-7px) rotate(-45deg);
-			}
-
-			/* Mobile Menu Overlay */
-			.mobile-menu {
-				display: none;
-				position: fixed;
-				top: 0;
-				left: 0;
-				right: 0;
-				bottom: 0;
-				height: 100dvh;
-				background: var(--glass-current);
-				backdrop-filter: blur(20px);
-				-webkit-backdrop-filter: blur(20px);
-				z-index: 150;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				gap: 2.5rem;
-				opacity: 0;
-				transition: opacity 0.3s ease;
-			}
-
-			.mobile-menu.open {
-				display: flex;
-				opacity: 1;
-			}
-
-			.mobile-menu .nav-link {
-				font-size: 1.75rem;
-				font-weight: 700;
-				letter-spacing: -0.02em;
-			}
-
-			@media (max-width: 768px) {
-				.nav-menu {
-					display: none;
-				}
-				.hamburger {
-					display: flex;
-				}
-			}
-
-			/* Location Section */
-			.location-section {
-				padding: 8rem 0;
-				background: linear-gradient(
-					to bottom,
-					transparent,
-					rgba(225, 29, 72, 0.05)
-				);
-			}
-
-			.map-container {
-				width: 100%;
-				height: 500px;
-				border-radius: 32px;
-				overflow: hidden;
-				border: 1px solid var(--border-current);
-				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-				background: var(--glass-current);
-				backdrop-filter: blur(12px);
-				-webkit-backdrop-filter: blur(12px);
-			}
-
-			.map-container iframe {
-				width: 100%;
-				height: 100%;
-				border: 0;
-			}
-
-			html.dark .map-container iframe {
-				filter: invert(90%) hue-rotate(180deg) brightness(1.1)
-					contrast(0.9);
-			}
-
-			/* WhatsApp Floating Button */
-			.whatsapp-float {
-				position: fixed;
-				bottom: 30px;
-				right: 30px;
-				width: 64px;
-				height: 64px;
-				background-color: #25d366;
-				color: white;
-				border-radius: 50px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-				z-index: 9999;
-				transition: var(--transition);
-				text-decoration: none;
-			}
-
-			.whatsapp-float:hover {
-				transform: scale(1.1) rotate(10deg);
-				background-color: #22c35e;
-				box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-			}
-
-			.whatsapp-float svg {
-				width: 32px;
-				height: 32px;
-				filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-			}
-
-			@media (max-width: 768px) {
-				.whatsapp-float {
-					bottom: 20px;
-					right: 20px;
-					width: 56px;
-					height: 56px;
-				}
-			}
-
-			/* Promotions Carousel */
-			.promo-section {
-				padding: 0 0 4rem;
-			}
-
-			.carousel-container {
-				position: relative;
-				width: 100%;
-				border-radius: 24px;
-				overflow: hidden;
-				box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-				cursor: pointer;
-				transition: var(--transition);
-				aspect-ratio: 21 / 9; /* Banner ratio */
-			}
-
-			@media (max-width: 900px) {
-				.carousel-container {
-					aspect-ratio: 16 / 9;
-				}
-			}
-
-			@media (max-width: 480px) {
-				.carousel-container {
-					aspect-ratio: 16 / 9;
-					border-radius: 16px;
-				}
-			}
-
-			.carousel-container:hover {
-				transform: translateY(-5px);
-				box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-			}
-
-			.carousel-track {
-				display: flex;
-				height: 100%;
-				transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-			}
-
-			.carousel-slide {
-				min-width: 100%;
-				height: 100%;
-				flex-shrink: 0;
-			}
-
-			.carousel-slide a {
-				display: block;
-				width: 100%;
-				height: 100%;
-			}
-
-			.carousel-slide img {
-				width: 100%;
-				height: 100%;
-				display: block;
-				object-fit: cover;
-				object-position: center;
-			}
-
-			@media (min-width: 769px) {
-				.carousel-slide img {
-					object-fit: contain;
-					background: rgba(0, 0, 0, 0.4);
-				}
-			}
-
-			@media (max-width: 768px) {
-				.carousel-slide img {
-					object-fit: contain;
-					object-position: center center;
-					width: 100%;
-					height: 100%;
-					background: rgba(0, 0, 0, 0.4);
-				}
-			}
-
-			.carousel-dots {
-				position: absolute;
-				bottom: 24px;
-				left: 50%;
-				transform: translateX(-50%);
-				display: flex;
-				gap: 12px;
-				z-index: 10;
-			}
-
-			.dot {
-				width: 12px;
-				height: 12px;
-				border-radius: 50%;
-				background: rgba(255, 255, 255, 0.3);
-				backdrop-filter: blur(4px);
-				border: 1px solid rgba(255, 255, 255, 0.2);
-				cursor: pointer;
-				transition: var(--transition);
-			}
-
-			.dot.active {
-				background: white;
-				width: 32px;
-				border-radius: 20px;
-			}
-
-			.carousel-btn {
-				position: absolute;
-				top: 50%;
-				transform: translateY(-50%);
-				width: 54px;
-				height: 54px;
-				border-radius: 50%;
-				background: rgba(255, 255, 255, 0.1);
-				backdrop-filter: blur(12px);
-				-webkit-backdrop-filter: blur(12px);
-				border: 1px solid rgba(255, 255, 255, 0.2);
-				color: white;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				cursor: pointer;
-				z-index: 20;
-				transition: var(--transition);
-				opacity: 0;
-			}
-
-			.carousel-container:hover .carousel-btn {
-				opacity: 1;
-			}
-
-			.carousel-btn:hover {
-				background: var(--primary);
-				border-color: var(--primary);
-				transform: translateY(-50%) scale(1.1);
-				box-shadow: 0 0 20px var(--primary-glow);
-			}
-
-			.prev-btn {
-				left: 24px;
-			}
-			.next-btn {
-				right: 24px;
-			}
-
-			@media (max-width: 768px) {
-				.carousel-btn {
-					display: none;
-				}
-			}
-
-			.theme-toggle {
-				background: var(--glass-current);
-				border: 1px solid var(--border-current);
-				color: var(--text-current);
-				padding: 0.75rem;
-				border-radius: 12px;
-				cursor: pointer;
-				transition: var(--transition);
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-
-			.theme-toggle:hover {
-				background: var(--primary);
-				color: white;
-				transform: rotate(15deg);
-			}
-
-			/* Animations */
-			@keyframes fadeInUp {
-				from {
-					opacity: 0;
-					transform: translateY(30px);
-				}
-				to {
-					opacity: 1;
-					transform: translateY(0);
-				}
-			}
-
-			@keyframes scaleIn {
-				from {
-					opacity: 0;
-					transform: scale(0.9);
-				}
-				to {
-					opacity: 1;
-					transform: scale(1);
-				}
-			}
-
-			@keyframes float {
-				0% {
-					transform: translateY(0px);
-				}
-				50% {
-					transform: translateY(-10px);
-				}
-				100% {
-					transform: translateY(0px);
-				}
-			}
-
-			/* Layout */
-			.container {
-				max-width: 1200px;
-				margin: 0 auto;
-				padding: 0 1.5rem;
-			}
-
-			/* Hero Section */
-			.hero {
-				position: relative;
-				padding: 5rem 0 0;
-				text-align: center;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: center;
-				min-height: auto;
-			}
-
-			@media (max-width: 768px) {
-				.hero {
-					padding: 7rem 0 3.5rem;
-				}
-			}
-
-			.logo-container {
-				width: clamp(200px, 55vw, 650px);
-				margin: 0 auto 1rem;
-				animation: scaleIn 1s var(--transition);
-				filter: drop-shadow(0 0 40px var(--primary-glow));
-				display: flex;
-				justify-content: center;
-			}
-
-			.logo-container img {
-				width: 100%;
-				height: auto;
-				display: block;
-			}
-
-			/* Logo Switching Logic */
-			.logo-dark {
-				display: none !important;
-			}
-			.logo-light {
-				display: block !important;
-			}
-
-			html.dark .logo-dark {
-				display: block !important;
-			}
-			html.dark .logo-light {
-				display: none !important;
-			}
-
-			@media (prefers-color-scheme: dark) {
-				html:not(.light) .logo-dark {
-					display: block !important;
-				}
-				html:not(.light) .logo-light {
-					display: none !important;
-				}
-			}
-
-			html.light .logo-dark {
-				display: none !important;
-			}
-			html.light .logo-light {
-				display: block !important;
-			}
-
-			.hero-content {
-				text-align: center;
-				margin-top: 2.5rem;
-				animation: fadeInUp 1s 0.2s both;
-			}
-
-			@media (max-width: 768px) {
-				.hero-content {
-					margin-top: 1.5rem;
-				}
-			}
-
-			.hero h1 {
-				font-size: 4rem;
-				margin-bottom: 1rem;
-				background: linear-gradient(
-					135deg,
-					var(--primary),
-					#f43f5e,
-					#9f1239
-				);
-
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				text-transform: uppercase;
-			}
-
-			.hero-content p {
-				font-size: 1.25rem;
-				max-width: 650px;
-				margin: 0 auto 2.5rem;
-				opacity: 0.9;
-				line-height: 1.7;
-				color: var(--text-current);
-			}
-
-			.cta-button {
-				display: inline-block;
-				padding: 1rem 2.5rem;
-				background: var(--primary);
-				color: white;
-				text-decoration: none;
-				border-radius: 50px;
-				font-weight: 600;
-				font-size: 1.1rem;
-				transition: var(--transition);
-				box-shadow: 0 10px 30px var(--primary-glow);
-				border: 1px solid rgba(255, 255, 255, 0.2);
-			}
-
-			.cta-button:hover {
-				transform: translateY(-5px);
-				box-shadow: 0 15px 40px var(--primary-glow);
-				filter: brightness(1.1);
-			}
-
-			/* Store Grid */
-			.stores-section {
-				padding: 6rem 0;
-			}
-
-			.section-header {
-				text-align: center;
-				margin-bottom: 4rem;
-			}
-
-			.section-header h2 {
-				font-size: 2.5rem;
-				margin-bottom: 1rem;
-			}
-
-			.grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-				gap: 2.5rem;
-			}
-
-			.store-card {
-				position: relative;
-				background: var(--glass-current);
-				backdrop-filter: blur(12px);
-				-webkit-backdrop-filter: blur(12px);
-				border: 1px solid var(--border-current);
-				border-radius: 24px;
-				transition: var(--transition);
-				cursor: pointer;
-				overflow: hidden;
-				text-decoration: none;
-				color: inherit;
-				animation: fadeInUp 0.8s both;
-				aspect-ratio: 1 / 1;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				padding: 0;
-			}
-
-			.store-card::before {
-				content: "";
-				position: absolute;
-				top: 0;
-				right: 0;
-				width: 100px;
-				height: 100px;
-				background: radial-gradient(
-					circle at top right,
-					var(--card-color),
-					transparent 70%
-				);
-				opacity: 0.2;
-				transition: var(--transition);
-			}
-
-			.store-card:hover {
-				transform: translateY(-12px);
-				border-color: var(--card-color);
-				box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-			}
-
-			.store-card:hover::before {
-				opacity: 0.4;
-				width: 150px;
-				height: 150px;
-			}
-
-			.icon-box {
-				width: 100%;
-				height: 100%;
-				background: transparent;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				color: var(--card-color);
-				transition: var(--transition);
-				padding: 0;
-			}
-
-			.icon-box img,
-			.icon-box svg {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				transition: var(--transition);
-			}
-
-			.store-card:hover .icon-box {
-				transform: scale(0.9);
-				opacity: 0.2;
-				filter: blur(5px);
-			}
-
-			.store-info-overlay {
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				top: 0;
-				background: linear-gradient(
-					to top,
-					var(--card-color),
-					rgba(0, 0, 0, 0.4)
-				);
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				padding: 2.5rem;
-				opacity: 0;
-				transform: translateY(20px);
-				transition: var(--transition);
-				color: white;
-				backdrop-filter: blur(5px);
-			}
-
-			.store-card:hover .store-info-overlay {
-				opacity: 1;
-				transform: translateY(0);
-			}
-
-			.store-card h3 {
-				font-size: 2rem;
-				margin-bottom: 0.75rem;
-				color: white;
-			}
-
-			.store-category {
-				font-size: 0.8rem;
-				text-transform: uppercase;
-				letter-spacing: 0.2em;
-				background: rgba(255, 255, 255, 0.2);
-				padding: 0.4rem 1rem;
-				border-radius: 50px;
-				font-weight: 700;
-				margin-bottom: 1.5rem;
-				color: white;
-			}
-
-			.store-card p {
-				line-height: 1.6;
-				opacity: 0.9;
-				font-size: 1.1rem;
-			}
-
-			/* Footer */
-			footer {
-				padding: 4rem 0;
-				text-align: center;
-				border-top: 1px solid var(--border-light);
-				margin-top: 4rem;
-			}
-
-			@media (prefers-color-scheme: dark) {
-				footer {
-					border-top: 1px solid var(--border-dark);
-				}
-			}
-
-			.footer-content p {
-				opacity: 0.6;
-				font-size: 0.9rem;
-			}
-
-			/* Background Elements */
-			.blob {
-				position: fixed;
-				width: 500px;
-				height: 500px;
-				background: var(--primary-glow);
-				filter: blur(100px);
-				border-radius: 50%;
-				z-index: -1;
-				opacity: 0.3;
-				animation: float 10s infinite linear alternate;
-			}
-
-			.blob-1 {
-				top: -200px;
-				right: -100px;
-			}
-			.blob-2 {
-				bottom: -200px;
-				left: -100px;
-			}
-
-			/* Responsive */
-			@media (max-width: 768px) {
-				.hero h1 {
-					font-size: 2.5rem;
-				}
-				.logo-container {
-					width: clamp(160px, 70vw, 280px);
-					margin: 0 auto;
-				}
-				.grid {
-					grid-template-columns: repeat(2, 1fr);
-					gap: 1rem;
-				}
-
-				.store-card h3 {
-					font-size: 1.2rem;
-					margin-bottom: 0.5rem;
-				}
-
-				.store-category {
-					font-size: 0.6rem;
-					padding: 0.3rem 0.8rem;
-					margin-bottom: 0.8rem;
-				}
-
-				.store-card p {
-					font-size: 0.8rem;
-					line-height: 1.4;
-					display: -webkit-box;
-					-webkit-line-clamp: 3;
-					-webkit-box-orient: vertical;
-					overflow: hidden;
-				}
-
-				.store-info-overlay {
-					padding: 1rem;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<div class="blob blob-1"></div>
-		<div class="blob blob-2"></div>
-
-		<!-- Mobile menu overlay -->
-		<div class="mobile-menu" id="mobile-menu">
-			<a href="#home" class="nav-link mobile-nav-link">Inicio</a>
-			<a href="#stores" class="nav-link mobile-nav-link">Tiendas</a>
-			<a href="#location" class="nav-link mobile-nav-link">Ubicación</a>
-		</div>
-
-		<nav id="navbar">
-			<div class="container nav-container">
-				<div style="width: 50px;">
-					<Image
-						src={navLogo}
-						alt="LA T13ECE Logo"
-						style="width: 100%; height: auto;"
-					/>
-				</div>
-				<div class="nav-menu">
-					<a href="#home" class="nav-link">Inicio</a>
-					<a href="#stores" class="nav-link">Tiendas</a>
-					<a href="#location" class="nav-link">Ubicación</a>
-				</div>
-
-
-				<div class="nav-actions">
-				<button
-					class="theme-toggle"
-					id="theme-toggle"
-					aria-label="Cambiar tema"
-				>
-					<svg
-						id="sun-icon"
-						class="logo-light"
-						xmlns="http://www.w3.org/2000/svg"
-						width="20"
-						height="20"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						><circle cx="12" cy="12" r="4"></circle><path
-							d="M12 2v2"></path><path d="M12 20v2"></path><path
-							d="m4.93 4.93 1.41 1.41"></path><path
-							d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"
-						></path><path d="M20 12h2"></path><path
-							d="m6.34 17.66-1.41 1.41"></path><path
-							d="m19.07 4.93-1.41 1.41"></path></svg
-					>
-					<svg
-						id="moon-icon"
-						class="logo-dark"
-						xmlns="http://www.w3.org/2000/svg"
-						width="20"
-						height="20"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"
-						></path></svg
-					>
-				</button>
-
-				<button class="hamburger" id="hamburger" aria-label="Abrir menú">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-			</div>
-			</div>
-		</nav>
-
-		<main>
-			<section id="home" class="hero">
-				<div class="container">
-					<div class="logo-container">
-						<Image
-							src={logoLight}
-							alt="LA T13ECE Logo Light"
-							class="logo-light"
-						/>
-						<Image
-							src={logoDark}
-							alt="LA T13ECE Logo Dark"
-							class="logo-dark"
-						/>
-					</div>
-				</div>
-			</section>
-		</main>
-
-		<section class="promo-section">
-			<div class="container">
-				<div class="carousel-container" id="promo-carousel">
-					<button
-						class="carousel-btn prev-btn"
-						id="prev-btn"
-						aria-label="Anterior"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="2.5"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							><path d="m15 18-6-6 6-6"></path></svg
-						>
-					</button>
-					<button
-						class="carousel-btn next-btn"
-						id="next-btn"
-						aria-label="Siguiente"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="2.5"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							><path d="m9 18 6-6-6-6"></path></svg
-						>
-					</button>
-					<div class="carousel-track">
-						{
-							promotions.map((promo) => (
-								<div class="carousel-slide">
-									<a
-										href={promo.link}
-										target={
-											promo.link !== "#"
-												? "_blank"
-												: undefined
-										}
-										rel={
-											promo.link !== "#"
-												? "noopener noreferrer"
-												: undefined
-										}
-									>
-										<Image
-											src={promo.image}
-											alt={promo.alt}
-											class="promo-image"
-										/>
-									</a>
-								</div>
-							))
-						}
-					</div>
-					<div class="carousel-dots">
-						{
-							promotions.map((_, i) => (
-								<span
-									class={`dot ${i === 0 ? "active" : ""}`}
-								/>
-							))
-						}
-					</div>
-				</div>
-
-				<div class="hero-content">
-					<p>
-						Descubre el futuro del shopping. Un entorno virtual
-						diseñado para conectar tus marcas favoritas con una
-						experiencia de lujo inigualable.
-					</p>
-					<a href="#stores" class="cta-button">Explorar tiendas</a>
-				</div>
-			</div>
-		</section>
-
-		<section id="stores" class="stores-section">
-			<div class="container">
-				<div class="section-header">
-					<h2>Nuestras Tiendas</h2>
-					<p>Acceso directo a las mejores marcas del mercado.</p>
-				</div>
-				<div class="grid">
-					{
-						stores.map((store, index) => (
-							<a
-								href={store.link}
-								target={
-									store.link !== "#" ? "_blank" : undefined
-								}
-								rel={
-									store.link !== "#"
-										? "noopener noreferrer"
-										: undefined
-								}
-								class="store-card"
-								style={`--card-color: ${store.color}; animation-delay: ${index * 0.1}s;`}
-							>
-								<div class="icon-box">
-									{typeof store.icon !== "string" ? (
-										<Image
-											src={store.icon}
-											alt={store.name}
-										/>
-									) : (
-										<>
-											{store.icon === "shopping-bag" && (
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													width="32"
-													height="32"
-													viewBox="0 0 24 24"
-													fill="none"
-													stroke="currentColor"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-												>
-													<path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-													<path d="M3 6h18" />
-													<path d="M16 10a4 4 0 0 1-8 0" />
-												</svg>
-											)}
-											{store.icon === "sparkles" && (
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													width="32"
-													height="32"
-													viewBox="0 0 24 24"
-													fill="none"
-													stroke="currentColor"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-												>
-													<path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
-													<path d="M5 3v4" />
-													<path d="M19 17v4" />
-													<path d="M3 5h4" />
-													<path d="M17 19h4" />
-												</svg>
-											)}
-											{store.icon === "cpu" && (
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													width="32"
-													height="32"
-													viewBox="0 0 24 24"
-													fill="none"
-													stroke="currentColor"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-												>
-													<rect
-														x="4"
-														y="4"
-														width="16"
-														height="16"
-														rx="2"
-														ry="2"
-													/>
-													<rect
-														x="9"
-														y="9"
-														width="6"
-														height="6"
-													/>
-													<path d="M15 2v2" />
-													<path d="M15 20v2" />
-													<path d="M2 15h2" />
-													<path d="M2 9h2" />
-													<path d="M20 15h2" />
-													<path d="M20 9h2" />
-													<path d="M9 2v2" />
-													<path d="M9 20v2" />
-												</svg>
-											)}
-											{store.icon === "utensils" && (
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													width="32"
-													height="32"
-													viewBox="0 0 24 24"
-													fill="none"
-													stroke="currentColor"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-												>
-													<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
-													<path d="M7 2v20" />
-													<path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
-												</svg>
-											)}
-											{store.icon === "home" && (
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													width="32"
-													height="32"
-													viewBox="0 0 24 24"
-													fill="none"
-													stroke="currentColor"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-												>
-													<path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-													<polyline points="9 22 9 12 15 12 15 22" />
-												</svg>
-											)}
-											{store.icon === "trophy" && (
-												<svg
-													xmlns="http://www.w3.org/2000/svg"
-													width="32"
-													height="32"
-													viewBox="0 0 24 24"
-													fill="none"
-													stroke="currentColor"
-													stroke-width="2"
-													stroke-linecap="round"
-													stroke-linejoin="round"
-												>
-													<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
-													<path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
-													<path d="M4 22h16" />
-													<path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
-													<path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
-													<path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
-												</svg>
-											)}
-										</>
-									)}
-								</div>
-
-								<div class="store-info-overlay">
-									<h3>{store.name}</h3>
-									<div class="store-category">
-										{store.category}
-									</div>
-									<p>{store.description}</p>
-								</div>
-							</a>
-						))
-					}
-				</div>
-			</div>
-		</section>
-
-		<section id="location" class="location-section">
-			<div class="container">
-				<div class="section-header">
-					<h2>Nuestra Ubicación</h2>
-					<p>Visítanos en el corazón comercial de Lima.</p>
-				</div>
-				<div class="map-container">
-					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.874135546059!2d-77.03847552402484!3d-12.052822188185012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8c697818e31%3A0x63d08595561b3696!2sAv.%20Uruguay%20185%2C%20Lima%2015001!5e0!3m2!1ses-419!2spe!4v1711350000000!5m2!1ses-419!2spe"
-						allowfullscreen=""
-						loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade"></iframe>
-				</div>
-				<div
-					style="margin-top: 3rem; display: flex; justify-content: center;"
-				>
-					<a
-						href="https://maps.app.goo.gl/MwhuBDoo45dnbYc67"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="cta-button"
-						style="display: flex; align-items: center; gap: 0.5rem;"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="20"
-							height="20"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						>
-							<path
-								d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"
-							></path>
-							<circle cx="12" cy="10" r="3"></circle>
-						</svg>
-						Ver en Google Maps
-					</a>
-				</div>
-			</div>
-		</section>
-	</body>
-
-	<footer id="footer">
-		<div class="container footer-content">
-			<div
-				style="display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem;"
-			>
-				<a
-					href="https://www.instagram.com/latreceavenue"
-					target="_blank"
-					rel="noopener noreferrer"
-					style="color: inherit; opacity: 0.6; transition: var(--transition);"
-					onmouseover="this.style.opacity='1'"
-					onmouseout="this.style.opacity='0.6'"
-				>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="48"
-						height="48"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						><rect width="20" height="20" x="2" y="2" rx="5" ry="5"
-						></rect><path
-							d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-						></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"
-						></line></svg
-					>
-				</a>
-				<a
-					href="https://www.tiktok.com/@galerialatrece"
-					target="_blank"
-					rel="noopener noreferrer"
-					style="color: inherit; opacity: 0.6; transition: var(--transition);"
-					onmouseover="this.style.opacity='1'"
-					onmouseout="this.style.opacity='0.6'"
-				>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="48"
-						height="48"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"
-						></path></svg
-					>
-				</a>
-				<a
-					href="https://www.facebook.com/latreceavenue"
-					target="_blank"
-					rel="noopener noreferrer"
-					style="color: inherit; opacity: 0.6; transition: var(--transition);"
-					onmouseover="this.style.opacity='1'"
-					onmouseout="this.style.opacity='0.6'"
-				>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="48"
-						height="48"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						><path
-							d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-						></path></svg
-					>
-				</a>
-			</div>
-
-			<p>
-				&copy; {currentYear} Wasi Digital. Todos los derechos reservados.
-			</p>
-		</div>
-	</footer>
-
-	<a
-		href="https://wa.me/51977448713"
-		class="whatsapp-float"
-		target="_blank"
-		rel="noopener noreferrer"
-		aria-label="Contactar por WhatsApp"
-	>
-		<svg
-			viewBox="0 0 24 24"
-			xmlns="http://www.w3.org/2000/svg"
-			fill="currentColor"
-		>
-			<path
-				d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
-			></path>
-		</svg>
-	</a>
-
-	<script>
-		// Theme Management
-		const themeToggle = document.getElementById("theme-toggle");
-		const html = document.documentElement;
-
-		// Check for saved theme or system preference
-		const savedTheme = localStorage.getItem("theme");
-		const systemDark = window.matchMedia(
-			"(prefers-color-scheme: dark)",
-		).matches;
-
-		if (savedTheme === "dark" || (!savedTheme && systemDark)) {
-			html.classList.add("dark");
-		} else {
-			html.classList.remove("dark");
-			if (savedTheme === "light") html.classList.add("light");
-		}
-
-		themeToggle?.addEventListener("click", () => {
-			if (html.classList.contains("dark")) {
-				html.classList.remove("dark");
-				html.classList.add("light");
-				localStorage.setItem("theme", "light");
-			} else {
-				html.classList.remove("light");
-				html.classList.add("dark");
-				localStorage.setItem("theme", "dark");
-			}
-		});
-
-		// Navbar Scroll Effect
-		const navbar = document.getElementById("navbar");
-		window.addEventListener("scroll", () => {
-			if (navbar) {
-				if (window.scrollY > 50) {
-					navbar.classList.add("scrolled");
-				} else {
-					navbar.classList.remove("scrolled");
-				}
-			}
-		});
-
-		// Hamburger Menu
-		const hamburger = document.getElementById("hamburger");
-		const mobileMenu = document.getElementById("mobile-menu");
-
-		function closeMobileMenu() {
-			hamburger?.classList.remove("open");
-			mobileMenu?.classList.remove("open");
-			document.body.style.overflow = "";
-		}
-
-		hamburger?.addEventListener("click", () => {
-			const isOpen = mobileMenu?.classList.contains("open");
-			if (isOpen) {
-				closeMobileMenu();
-			} else {
-				hamburger.classList.add("open");
-				mobileMenu?.classList.add("open");
-				document.body.style.overflow = "hidden";
-			}
-		});
-
-		// Close menu when a link is clicked
-		mobileMenu?.querySelectorAll(".mobile-nav-link").forEach((link) => {
-			link.addEventListener("click", closeMobileMenu);
-		});
-
-		// Reveal on scroll logic for store cards
-		const observerOptions = {
-			threshold: 0.1,
-		};
-
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					(entry.target as HTMLElement).style.opacity = "1";
-					(entry.target as HTMLElement).style.transform =
-						"translateY(0)";
-					observer.unobserve(entry.target);
-				}
-			});
-		}, observerOptions);
-
-		document.querySelectorAll(".store-card").forEach((card) => {
-			(card as HTMLElement).style.opacity = "0";
-			(card as HTMLElement).style.transform = "translateY(40px)";
-			observer.observe(card);
-		});
-
-		// Promo Carousel Logic
-		const promoTrack = document.querySelector(
-			".carousel-track",
-		) as HTMLElement;
-		const promoDots = document.querySelectorAll(".dot");
-		const promoContainer = document.getElementById("promo-carousel");
-		let promoIndex = 0;
-		const totalPromos = promoDots.length;
-
-		function updatePromoCarousel() {
-			if (!promoTrack) return;
-			promoTrack.style.transform = `translateX(-${promoIndex * 100}%)`;
-			promoDots.forEach((dot, i) => {
-				dot.classList.toggle("active", i === promoIndex);
-			});
-		}
-
-		function nextPromo() {
-			promoIndex = (promoIndex + 1) % totalPromos;
-			updatePromoCarousel();
-		}
-
-		function prevPromo() {
-			promoIndex = (promoIndex - 1 + totalPromos) % totalPromos;
-			updatePromoCarousel();
-		}
-
-		const prevBtn = document.getElementById("prev-btn");
-		const nextBtn = document.getElementById("next-btn");
-
-		prevBtn?.addEventListener("click", (e) => {
-			e.stopPropagation();
-			prevPromo();
-		});
-
-		nextBtn?.addEventListener("click", (e) => {
-			e.stopPropagation();
-			nextPromo();
-		});
-
-		let promoInterval = setInterval(nextPromo, 5000);
-
-		// Touch / Swipe Logic
-		let touchStartX = 0;
-		let touchEndX = 0;
-
-		promoContainer?.addEventListener(
-			"touchstart",
-			(e: any) => {
-				touchStartX = e.touches[0].clientX;
-			},
-			{ passive: true },
-		);
-
-		promoContainer?.addEventListener(
-			"touchend",
-			(e: any) => {
-				touchEndX = e.changedTouches[0].clientX;
-				handleSwipe();
-			},
-			{ passive: true },
-		);
-
-		function handleSwipe() {
-			const diff = touchStartX - touchEndX;
-			const threshold = 50;
-			if (Math.abs(diff) > threshold) {
-				if (diff > 0) nextPromo();
-				else prevPromo();
-			}
-		}
-
-		if (promoContainer) {
-			promoDots.forEach((dot, i) => {
-				dot.addEventListener("click", () => {
-					promoIndex = i;
-					updatePromoCarousel();
-				});
-			});
-		}
-	</script>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>LA T13ECE - Centro Comercial Virtual</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Rubik:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #e11d48;
+        --primary-glow: rgba(225, 29, 72, 0.3);
+
+        --bg-dark: #0f172a;
+        --bg-light: #f8fafc;
+        --text-dark: #f8fafc;
+        --text-light: #1e293b;
+        --glass-dark: rgba(15, 23, 42, 0.7);
+        --glass-light: rgba(255, 255, 255, 0.8);
+        --border-dark: rgba(255, 255, 255, 0.1);
+        --border-light: rgba(15, 23, 42, 0.1);
+        --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* Theme Management */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      html.dark {
+        --bg-current: var(--bg-dark);
+        --text-current: var(--text-dark);
+        --glass-current: var(--glass-dark);
+        --border-current: var(--border-dark);
+      }
+
+      html:not(.dark) {
+        --bg-current: var(--bg-light);
+        --text-current: var(--text-light);
+        --glass-current: var(--glass-light);
+        --border-current: var(--border-light);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Rubik", sans-serif;
+        background-color: var(--bg-current);
+        color: var(--text-current);
+        overflow-x: hidden;
+        transition:
+          background-color 0.5s ease,
+          color 0.5s ease;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      /* Navbar */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 200;
+        padding: 1.5rem 0;
+        background: transparent;
+        transition: var(--transition);
+      }
+
+      nav.scrolled {
+        background: var(--glass-current);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border-current);
+        padding: 1rem 0;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: var(--text-current);
+        font-weight: 500;
+        font-size: 1rem;
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: var(--transition);
+      }
+
+      .nav-link:hover {
+        color: var(--primary);
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* Hamburger Button */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 42px;
+        height: 42px;
+        background: var(--glass-current);
+        border: 1px solid var(--border-current);
+        border-radius: 12px;
+        cursor: pointer;
+        padding: 0 10px;
+        transition: var(--transition);
+        z-index: 200;
+      }
+
+      .hamburger span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background: var(--text-current);
+        border-radius: 4px;
+        transition: var(--transition);
+        transform-origin: center;
+      }
+
+      .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+      .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+
+      /* Mobile Menu Overlay */
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100dvh;
+        background: var(--glass-current);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        z-index: 150;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .mobile-menu.open {
+        display: flex;
+        opacity: 1;
+      }
+
+      .mobile-menu .nav-link {
+        font-size: 1.75rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      @media (max-width: 768px) {
+        .nav-menu {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+      }
+
+      /* Location Section */
+      .location-section {
+        padding: 8rem 0;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          rgba(225, 29, 72, 0.05)
+        );
+      }
+
+      .map-container {
+        width: 100%;
+        height: 500px;
+        border-radius: 32px;
+        overflow: hidden;
+        border: 1px solid var(--border-current);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        background: var(--glass-current);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      html.dark .map-container iframe {
+        filter: invert(90%) hue-rotate(180deg) brightness(1.1) contrast(0.9);
+      }
+
+      /* WhatsApp Floating Button */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 64px;
+        height: 64px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        z-index: 9999;
+        transition: var(--transition);
+        text-decoration: none;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1) rotate(10deg);
+        background-color: #22c35e;
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+      }
+
+      .whatsapp-float svg {
+        width: 32px;
+        height: 32px;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+      }
+
+      @media (max-width: 768px) {
+        .whatsapp-float {
+          bottom: 20px;
+          right: 20px;
+          width: 56px;
+          height: 56px;
+        }
+      }
+
+      /* Promotions Carousel */
+      .promo-section {
+        padding: 0 0 4rem;
+      }
+
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: var(--transition);
+        aspect-ratio: 21 / 9; /* Banner ratio */
+      }
+
+      @media (max-width: 900px) {
+        .carousel-container {
+          aspect-ratio: 16 / 9;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .carousel-container {
+          aspect-ratio: 16 / 9;
+          border-radius: 16px;
+        }
+      }
+
+      .carousel-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .carousel-track {
+        display: flex;
+        height: 100%;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .carousel-slide {
+        min-width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+      }
+
+      .carousel-slide a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      @media (min-width: 769px) {
+        .carousel-slide img {
+          object-fit: contain;
+          background: rgba(0, 0, 0, 0.4);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .carousel-slide img {
+          object-fit: contain;
+          object-position: center center;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.4);
+        }
+      }
+
+      .carousel-dots {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 12px;
+        z-index: 10;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .dot.active {
+        background: white;
+        width: 32px;
+        border-radius: 20px;
+      }
+
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 20;
+        transition: var(--transition);
+        opacity: 0;
+      }
+
+      .carousel-container:hover .carousel-btn {
+        opacity: 1;
+      }
+
+      .carousel-btn:hover {
+        background: var(--primary);
+        border-color: var(--primary);
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 0 20px var(--primary-glow);
+      }
+
+      .prev-btn {
+        left: 24px;
+      }
+      .next-btn {
+        right: 24px;
+      }
+
+      @media (max-width: 768px) {
+        .carousel-btn {
+          display: none;
+        }
+      }
+
+      .theme-toggle {
+        background: var(--glass-current);
+        border: 1px solid var(--border-current);
+        color: var(--text-current);
+        padding: 0.75rem;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .theme-toggle:hover {
+        background: var(--primary);
+        color: white;
+        transform: rotate(15deg);
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes scaleIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+        100% {
+          transform: translateY(0px);
+        }
+      }
+
+      /* Layout */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        position: relative;
+        padding: 5rem 0 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: auto;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 7rem 0 3.5rem;
+        }
+      }
+
+      .logo-container {
+        width: clamp(200px, 55vw, 650px);
+        margin: 0 auto 1rem;
+        animation: scaleIn 1s var(--transition);
+        filter: drop-shadow(0 0 40px var(--primary-glow));
+        display: flex;
+        justify-content: center;
+      }
+
+      .logo-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Logo Switching Logic */
+      .logo-dark {
+        display: none !important;
+      }
+      .logo-light {
+        display: block !important;
+      }
+
+      html.dark .logo-dark {
+        display: block !important;
+      }
+      html.dark .logo-light {
+        display: none !important;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html:not(.light) .logo-dark {
+          display: block !important;
+        }
+        html:not(.light) .logo-light {
+          display: none !important;
+        }
+      }
+
+      html.light .logo-dark {
+        display: none !important;
+      }
+      html.light .logo-light {
+        display: block !important;
+      }
+
+      .hero-content {
+        text-align: center;
+        margin-top: 2.5rem;
+        animation: fadeInUp 1s 0.2s both;
+      }
+
+      @media (max-width: 768px) {
+        .hero-content {
+          margin-top: 1.5rem;
+        }
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(135deg, var(--primary), #f43f5e, #9f1239);
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+      }
+
+      .hero-content p {
+        font-size: 1.25rem;
+        max-width: 650px;
+        margin: 0 auto 2.5rem;
+        opacity: 0.9;
+        line-height: 1.7;
+        color: var(--text-current);
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: var(--primary);
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: var(--transition);
+        box-shadow: 0 10px 30px var(--primary-glow);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px var(--primary-glow);
+        filter: brightness(1.1);
+      }
+
+      /* Store Grid */
+      .stores-section {
+        padding: 6rem 0;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .store-card {
+        position: relative;
+        background: var(--glass-current);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--border-current);
+        border-radius: 24px;
+        transition: var(--transition);
+        cursor: pointer;
+        overflow: hidden;
+        text-decoration: none;
+        color: inherit;
+        animation: fadeInUp 0.8s both;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+      }
+
+      .store-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(
+          circle at top right,
+          var(--card-color),
+          transparent 70%
+        );
+        opacity: 0.2;
+        transition: var(--transition);
+      }
+
+      .store-card:hover {
+        transform: translateY(-12px);
+        border-color: var(--card-color);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      }
+
+      .store-card:hover::before {
+        opacity: 0.4;
+        width: 150px;
+        height: 150px;
+      }
+
+      .icon-box {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--card-color);
+        transition: var(--transition);
+        padding: 0;
+      }
+
+      .icon-box img,
+      .icon-box svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .store-card:hover .icon-box {
+        transform: scale(0.9);
+        opacity: 0.2;
+        filter: blur(5px);
+      }
+
+      .store-info-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        background: linear-gradient(
+          to top,
+          var(--card-color),
+          rgba(0, 0, 0, 0.4)
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2.5rem;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: var(--transition);
+        color: white;
+        backdrop-filter: blur(5px);
+      }
+
+      .store-card:hover .store-info-overlay {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .store-card h3 {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+        color: white;
+      }
+
+      .store-category {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 0.4rem 1rem;
+        border-radius: 50px;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
+
+      .store-card p {
+        line-height: 1.6;
+        opacity: 0.9;
+        font-size: 1.1rem;
+      }
+
+      /* Footer */
+      footer {
+        padding: 4rem 0;
+        text-align: center;
+        border-top: 1px solid var(--border-light);
+        margin-top: 4rem;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        footer {
+          border-top: 1px solid var(--border-dark);
+        }
+      }
+
+      .footer-content p {
+        opacity: 0.6;
+        font-size: 0.9rem;
+      }
+
+      /* Background Elements */
+      .blob {
+        position: fixed;
+        width: 500px;
+        height: 500px;
+        background: var(--primary-glow);
+        filter: blur(100px);
+        border-radius: 50%;
+        z-index: -1;
+        opacity: 0.3;
+        animation: float 10s infinite linear alternate;
+      }
+
+      .blob-1 {
+        top: -200px;
+        right: -100px;
+      }
+      .blob-2 {
+        bottom: -200px;
+        left: -100px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+        .logo-container {
+          width: clamp(160px, 70vw, 280px);
+          margin: 0 auto;
+        }
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1rem;
+        }
+
+        .store-card h3 {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .store-category {
+          font-size: 0.6rem;
+          padding: 0.3rem 0.8rem;
+          margin-bottom: 0.8rem;
+        }
+
+        .store-card p {
+          font-size: 0.8rem;
+          line-height: 1.4;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+
+        .store-info-overlay {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#home" class="nav-link mobile-nav-link">Inicio</a>
+      <a href="#stores" class="nav-link mobile-nav-link">Tiendas</a>
+      <a href="#location" class="nav-link mobile-nav-link">Ubicación</a>
+    </div>
+
+    <nav id="navbar">
+      <div class="container nav-container">
+        <div style="width: 50px;">
+          <Image
+            src={navLogo}
+            alt="LA T13ECE Logo"
+            style="width: 100%; height: auto;"
+          />
+        </div>
+        <div class="nav-menu">
+          <a href="#home" class="nav-link">Inicio</a>
+          <a href="#stores" class="nav-link">Tiendas</a>
+          <a href="#location" class="nav-link">Ubicación</a>
+        </div>
+
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Cambiar tema"
+          >
+            <svg
+              id="sun-icon"
+              class="logo-light"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"
+              ></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"
+              ></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"
+              ></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"
+              ></path><path d="m19.07 4.93-1.41 1.41"></path></svg
+            >
+            <svg
+              id="moon-icon"
+              class="logo-dark"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg
+            >
+          </button>
+
+          <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="container">
+          <div class="logo-container">
+            <Image
+              src={logoLight}
+              alt="LA T13ECE Logo Light"
+              class="logo-light"
+            />
+            <Image src={logoDark} alt="LA T13ECE Logo Dark" class="logo-dark" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="promo-section">
+      <div class="container">
+        <div class="carousel-container" id="promo-carousel">
+          <button
+            class="carousel-btn prev-btn"
+            id="prev-btn"
+            aria-label="Anterior"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg
+            >
+          </button>
+          <button
+            class="carousel-btn next-btn"
+            id="next-btn"
+            aria-label="Siguiente"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg
+            >
+          </button>
+          <div class="carousel-track">
+            {
+              promotions.map((promo) => (
+                <div class="carousel-slide">
+                  <a
+                    href={promo.link}
+                    target={promo.link !== "#" ? "_blank" : undefined}
+                    rel={promo.link !== "#" ? "noopener noreferrer" : undefined}
+                  >
+                    <Image
+                      src={promo.image}
+                      alt={promo.alt}
+                      class="promo-image"
+                    />
+                  </a>
+                </div>
+              ))
+            }
+          </div>
+          <div class="carousel-dots">
+            {
+              promotions.map((_, i) => (
+                <span class={`dot ${i === 0 ? "active" : ""}`} />
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="hero-content">
+          <p>
+            Descubre el futuro del shopping. Un entorno virtual diseñado para
+            conectar tus marcas favoritas con una experiencia de lujo
+            inigualable.
+          </p>
+          <a href="#stores" class="cta-button">Explorar tiendas</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="stores" class="stores-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Nuestras Tiendas</h2>
+          <p>Acceso directo a las mejores marcas del mercado.</p>
+        </div>
+        <div class="grid">
+          {
+            stores.map((store, index) => (
+              <a
+                href={store.link}
+                target={store.link !== "#" ? "_blank" : undefined}
+                rel={store.link !== "#" ? "noopener noreferrer" : undefined}
+                class="store-card"
+                style={`--card-color: ${store.color}; animation-delay: ${index * 0.1}s;`}
+              >
+                <div class="icon-box">
+                  {typeof store.icon !== "string" ? (
+                    <Image src={store.icon} alt={store.name} />
+                  ) : (
+                    <>
+                      {store.icon === "shopping-bag" && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                          <path d="M3 6h18" />
+                          <path d="M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                      )}
+                      {store.icon === "sparkles" && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                          <path d="M5 3v4" />
+                          <path d="M19 17v4" />
+                          <path d="M3 5h4" />
+                          <path d="M17 19h4" />
+                        </svg>
+                      )}
+                      {store.icon === "cpu" && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <rect
+                            x="4"
+                            y="4"
+                            width="16"
+                            height="16"
+                            rx="2"
+                            ry="2"
+                          />
+                          <rect x="9" y="9" width="6" height="6" />
+                          <path d="M15 2v2" />
+                          <path d="M15 20v2" />
+                          <path d="M2 15h2" />
+                          <path d="M2 9h2" />
+                          <path d="M20 15h2" />
+                          <path d="M20 9h2" />
+                          <path d="M9 2v2" />
+                          <path d="M9 20v2" />
+                        </svg>
+                      )}
+                      {store.icon === "utensils" && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+                          <path d="M7 2v20" />
+                          <path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+                        </svg>
+                      )}
+                      {store.icon === "home" && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                          <polyline points="9 22 9 12 15 12 15 22" />
+                        </svg>
+                      )}
+                      {store.icon === "trophy" && (
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                          <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                          <path d="M4 22h16" />
+                          <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                          <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                          <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+                        </svg>
+                      )}
+                    </>
+                  )}
+                </div>
+
+                <div class="store-info-overlay">
+                  <h3>{store.name}</h3>
+                  <div class="store-category">{store.category}</div>
+                  <p>{store.description}</p>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="location" class="location-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Nuestra Ubicación</h2>
+          <p>Visítanos en el corazón comercial de Lima.</p>
+        </div>
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.874135546059!2d-77.03847552402484!3d-12.052822188185012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8c697818e31%3A0x63d08595561b3696!2sAv.%20Uruguay%20185%2C%20Lima%2015001!5e0!3m2!1ses-419!2spe!4v1711350000000!5m2!1ses-419!2spe"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div style="margin-top: 3rem; display: flex; justify-content: center;">
+          <a
+            href="https://maps.app.goo.gl/MwhuBDoo45dnbYc67"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-button"
+            style="display: flex; align-items: center; gap: 0.5rem;"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Ver en Google Maps
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <footer id="footer">
+    <div class="container footer-content">
+      <div
+        style="display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem;"
+      >
+        <a
+          href="https://www.instagram.com/latreceavenue"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color: inherit; opacity: 0.6; transition: var(--transition);"
+          onmouseover="this.style.opacity='1'"
+          onmouseout="this.style.opacity='0.6'"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path
+              d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line
+              x1="17.5"
+              x2="17.51"
+              y1="6.5"
+              y2="6.5"></line></svg
+          >
+        </a>
+        <a
+          href="https://www.tiktok.com/@galerialatrece"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color: inherit; opacity: 0.6; transition: var(--transition);"
+          onmouseover="this.style.opacity='1'"
+          onmouseout="this.style.opacity='0.6'"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg
+          >
+        </a>
+        <a
+          href="https://www.facebook.com/latreceavenue"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color: inherit; opacity: 0.6; transition: var(--transition);"
+          onmouseover="this.style.opacity='1'"
+          onmouseout="this.style.opacity='0.6'"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path
+              d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+            ></path></svg
+          >
+        </a>
+      </div>
+
+      <p>
+        &copy; {currentYear} Wasi Digital. Todos los derechos reservados.
+      </p>
+    </div>
+  </footer>
+
+  <a
+    href="https://wa.me/51993693417"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar por WhatsApp"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+    >
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+      ></path>
+    </svg>
+  </a>
+
+  <script>
+    // Theme Management
+    const themeToggle = document.getElementById("theme-toggle");
+    const html = document.documentElement;
+
+    // Check for saved theme or system preference
+    const savedTheme = localStorage.getItem("theme");
+    const systemDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+
+    if (savedTheme === "dark" || (!savedTheme && systemDark)) {
+      html.classList.add("dark");
+    } else {
+      html.classList.remove("dark");
+      if (savedTheme === "light") html.classList.add("light");
+    }
+
+    themeToggle?.addEventListener("click", () => {
+      if (html.classList.contains("dark")) {
+        html.classList.remove("dark");
+        html.classList.add("light");
+        localStorage.setItem("theme", "light");
+      } else {
+        html.classList.remove("light");
+        html.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      }
+    });
+
+    // Navbar Scroll Effect
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      if (navbar) {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      }
+    });
+
+    // Hamburger Menu
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    function closeMobileMenu() {
+      hamburger?.classList.remove("open");
+      mobileMenu?.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    hamburger?.addEventListener("click", () => {
+      const isOpen = mobileMenu?.classList.contains("open");
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        hamburger.classList.add("open");
+        mobileMenu?.classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+    });
+
+    // Close menu when a link is clicked
+    mobileMenu?.querySelectorAll(".mobile-nav-link").forEach((link) => {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    // Reveal on scroll logic for store cards
+    const observerOptions = {
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          (entry.target as HTMLElement).style.opacity = "1";
+          (entry.target as HTMLElement).style.transform = "translateY(0)";
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll(".store-card").forEach((card) => {
+      (card as HTMLElement).style.opacity = "0";
+      (card as HTMLElement).style.transform = "translateY(40px)";
+      observer.observe(card);
+    });
+
+    // Promo Carousel Logic
+    const promoTrack = document.querySelector(".carousel-track") as HTMLElement;
+    const promoDots = document.querySelectorAll(".dot");
+    const promoContainer = document.getElementById("promo-carousel");
+    let promoIndex = 0;
+    const totalPromos = promoDots.length;
+
+    function updatePromoCarousel() {
+      if (!promoTrack) return;
+      promoTrack.style.transform = `translateX(-${promoIndex * 100}%)`;
+      promoDots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === promoIndex);
+      });
+    }
+
+    function nextPromo() {
+      promoIndex = (promoIndex + 1) % totalPromos;
+      updatePromoCarousel();
+    }
+
+    function prevPromo() {
+      promoIndex = (promoIndex - 1 + totalPromos) % totalPromos;
+      updatePromoCarousel();
+    }
+
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+
+    prevBtn?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      prevPromo();
+    });
+
+    nextBtn?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      nextPromo();
+    });
+
+    let promoInterval = setInterval(nextPromo, 5000);
+
+    // Touch / Swipe Logic
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    promoContainer?.addEventListener(
+      "touchstart",
+      (e: any) => {
+        touchStartX = e.touches[0].clientX;
+      },
+      { passive: true },
+    );
+
+    promoContainer?.addEventListener(
+      "touchend",
+      (e: any) => {
+        touchEndX = e.changedTouches[0].clientX;
+        handleSwipe();
+      },
+      { passive: true },
+    );
+
+    function handleSwipe() {
+      const diff = touchStartX - touchEndX;
+      const threshold = 50;
+      if (Math.abs(diff) > threshold) {
+        if (diff > 0) nextPromo();
+        else prevPromo();
+      }
+    }
+
+    if (promoContainer) {
+      promoDots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          promoIndex = i;
+          updatePromoCarousel();
+        });
+      });
+    }
+  </script>
 </html>
