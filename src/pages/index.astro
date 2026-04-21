@@ -12,6 +12,10 @@ import globalExpressLogo from "../assets/stores/globalexpress.jpeg";
 import cortinasPerezLogo from "../assets/stores/cortinas-perez.webp";
 import aliadaLogo from "../assets/stores/aliada.jpeg";
 import beseguraLogo from "../assets/stores/besegura.webp";
+import ninaLogo from "../assets/stores/nina.jpg";
+import maldiLogo from "../assets/stores/maldi.webp";
+import emakLogo from "../assets/stores/emak.webp";
+import jassLogo from "../assets/stores/jass.webp";
 import promo1 from "../assets/promos/promo1.webp";
 import promo2 from "../assets/promos/promo2.webp";
 import promo3 from "../assets/promos/promo3.webp";
@@ -89,6 +93,38 @@ const stores = [
     description: "Venta de bodys y fajas moldeadoras.",
     color: "#334155",
     link: "https://besegura.com/",
+  },
+  {
+    name: "Nina",
+    category: "Ropa",
+    icon: ninaLogo,
+    description: "Venta de ropa para damas.",
+    color: "#171717",
+    link: "https://tiendasnina.com/",
+  },
+  {
+    name: "Maldi",
+    category: "Ropa",
+    icon: maldiLogo,
+    description: "Venta de ropa para damas.",
+    color: "#F5F5DC",
+    link: "https://maldistore.com/",
+  },
+  {
+    name: "Emak",
+    category: "Ropa",
+    icon: emakLogo,
+    description: "Venta de ropa de cama y accesorios.",
+    color: "#40E0D0",
+    link: "https://tiendaemak.com/",
+  },
+  {
+    name: "Jass",
+    category: "Ropa",
+    icon: jassLogo,
+    description: "Prendas de vestir para la mujer moderna.",
+    color: "#F87171",
+    link: "https://jassmodafemenina.com/",
   },
 ];
 
@@ -192,7 +228,7 @@ const currentYear = new Date().getFullYear();
         left: 0;
         right: 0;
         z-index: 200;
-        padding: 1.5rem 0;
+        padding: 0.75rem 0;
         background: transparent;
         transition: var(--transition);
       }
@@ -202,7 +238,7 @@ const currentYear = new Date().getFullYear();
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border-bottom: 1px solid var(--border-current);
-        padding: 1rem 0;
+        padding: 0.5rem 0;
       }
 
       .nav-container {
@@ -412,7 +448,9 @@ const currentYear = new Date().getFullYear();
       .carousel-container {
         position: relative;
         width: 100%;
-        border-radius: 24px;
+        max-width: 1400px;
+        margin: 0 auto;
+        border-radius: 0;
         overflow: hidden;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         cursor: pointer;
@@ -467,18 +505,16 @@ const currentYear = new Date().getFullYear();
 
       @media (min-width: 769px) {
         .carousel-slide img {
-          object-fit: contain;
-          background: rgba(0, 0, 0, 0.4);
+          object-fit: cover;
         }
       }
 
       @media (max-width: 768px) {
         .carousel-slide img {
-          object-fit: contain;
+          object-fit: cover;
           object-position: center center;
           width: 100%;
           height: 100%;
-          background: rgba(0, 0, 0, 0.4);
         }
       }
 
@@ -634,7 +670,7 @@ const currentYear = new Date().getFullYear();
       }
 
       .logo-container {
-        width: clamp(200px, 55vw, 650px);
+        width: clamp(150px, 40vw, 400px);
         margin: 0 auto 1rem;
         animation: scaleIn 1s var(--transition);
         filter: drop-shadow(0 0 40px var(--primary-glow));
@@ -747,8 +783,8 @@ const currentYear = new Date().getFullYear();
 
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 2.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 2rem;
       }
 
       .store-card {
@@ -757,7 +793,7 @@ const currentYear = new Date().getFullYear();
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         border: 1px solid var(--border-current);
-        border-radius: 24px;
+        border-radius: 20px;
         transition: var(--transition);
         cursor: pointer;
         overflow: hidden;
@@ -841,7 +877,7 @@ const currentYear = new Date().getFullYear();
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding: 2.5rem;
+        padding: 2rem;
         opacity: 0;
         transform: translateY(20px);
         transition: var(--transition);
@@ -855,7 +891,7 @@ const currentYear = new Date().getFullYear();
       }
 
       .store-card h3 {
-        font-size: 2rem;
+        font-size: 1.75rem;
         margin-bottom: 0.75rem;
         color: white;
       }
@@ -1050,8 +1086,7 @@ const currentYear = new Date().getFullYear();
     </main>
 
     <section class="promo-section">
-      <div class="container">
-        <div class="carousel-container" id="promo-carousel">
+      <div class="carousel-container" id="promo-carousel">
           <button
             class="carousel-btn prev-btn"
             id="prev-btn"
@@ -1114,16 +1149,17 @@ const currentYear = new Date().getFullYear();
           </div>
         </div>
 
-        <div class="hero-content">
-          <p>
-            Descubre el futuro del shopping. Un entorno virtual diseñado para
-            conectar tus marcas favoritas con una experiencia de lujo
-            inigualable.
-          </p>
-          <a href="#stores" class="cta-button">Explorar tiendas</a>
+        <div class="container">
+          <div class="hero-content">
+            <p>
+              Descubre el futuro del shopping. Un entorno virtual diseñado para
+              conectar tus marcas favoritas con una experiencia de lujo
+              inigualable.
+            </p>
+            <a href="#stores" class="cta-button">Explorar tiendas</a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
     <section id="stores" class="stores-section">
       <div class="container">
