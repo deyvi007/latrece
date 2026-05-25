@@ -165,7 +165,58 @@ const currentYear = new Date().getFullYear();
     <link rel="icon" type="image/webp" href="/favicon.webp" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>LA T13ECE - Centro Comercial Virtual</title>
+    <title>Galería La Trece | Centro Comercial Virtual en Lima</title>
+    <meta name="description" content="Descubre Galería La Trece, el centro comercial virtual líder en Lima. Explora las mejores tiendas de moda urbana, ropa para damas, calzado y decoración." />
+    <meta name="keywords" content="galeria la trece, centro comercial, centro comercial virtual, tiendas de ropa, lima peru, galeria de moda, compras online, galeria uruguay 185" />
+    <link rel="canonical" href="https://www.galerialatrece.com" />
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.galerialatrece.com" />
+    <meta property="og:title" content="Galería La Trece | Centro Comercial Virtual en Lima" />
+    <meta property="og:description" content="Explora las mejores tiendas exclusivas de moda urbana, calzado, belleza y decoración en nuestro centro comercial virtual." />
+    <meta property="og:image" content="https://www.galerialatrece.com/favicon.webp" />
+    <meta property="og:locale" content="es_PE" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:url" content="https://www.galerialatrece.com" />
+    <meta property="twitter:title" content="Galería La Trece | Centro Comercial Virtual en Lima" />
+    <meta property="twitter:description" content="Explora las mejores tiendas exclusivas de moda urbana, calzado, belleza y decoración en nuestro centro comercial virtual." />
+    <meta property="twitter:image" content="https://www.galerialatrece.com/favicon.webp" />
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ShoppingCenter",
+        "name": "Galería La Trece",
+        "url": "https://www.galerialatrece.com",
+        "logo": "https://www.galerialatrece.com/favicon.webp",
+        "image": "https://www.galerialatrece.com/favicon.webp",
+        "description": "Centro comercial virtual que agrupa las mejores tiendas de moda urbana, ropa, calzado, decoración y servicios en Lima.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Av. Uruguay 185",
+          "addressLocality": "Lima",
+          "addressRegion": "Lima",
+          "postalCode": "15001",
+          "addressCountry": "PE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -12.052822,
+          "longitude": -77.038475
+        },
+        "telephone": "+51977448713",
+        "sameAs": [
+          "https://www.instagram.com/latreceavenue",
+          "https://www.tiktok.com/@galerialatrece",
+          "https://www.facebook.com/latreceavenue"
+        ]
+      }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -1310,6 +1361,19 @@ const currentYear = new Date().getFullYear();
           width: 100%;
         }
       }
+
+      /* Accessibility & SEO utility */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
     </style>
   </head>
   <body>
@@ -1329,7 +1393,7 @@ const currentYear = new Date().getFullYear();
         <div style="width: 50px;">
           <Image
             src={navLogo}
-            alt="LA T13ECE Logo"
+            alt="LA TRECE Logo"
             style="width: 100%; height: auto;"
           />
         </div>
@@ -1392,13 +1456,14 @@ const currentYear = new Date().getFullYear();
     <main>
       <section id="home" class="hero">
         <div class="container">
+          <h1 class="sr-only">Galería La Trece - Centro Comercial Virtual en Lima</h1>
           <div class="logo-container">
             <Image
               src={logoLight}
-              alt="LA T13ECE Logo Light"
+              alt="LA TRECE Logo Light"
               class="logo-light"
             />
-            <Image src={logoDark} alt="LA T13ECE Logo Dark" class="logo-dark" />
+            <Image src={logoDark} alt="LA TRECE Logo Dark" class="logo-dark" />
           </div>
         </div>
       </section>
@@ -1471,9 +1536,7 @@ const currentYear = new Date().getFullYear();
       <div class="container">
         <div class="hero-content">
           <p>
-            Descubre el futuro del shopping. Un entorno virtual diseñado para
-            conectar tus marcas favoritas con una experiencia de lujo
-            inigualable.
+            Descubre el futuro de tus compras en <strong>Galería La Trece</strong>, el <strong>centro comercial</strong> virtual en Lima diseñado para conectar tus marcas favoritas con una experiencia de compra exclusiva.
           </p>
           <a href="#stores" class="cta-button">Explorar tiendas</a>
         </div>
@@ -1483,8 +1546,8 @@ const currentYear = new Date().getFullYear();
     <section id="stores" class="stores-section">
       <div class="container">
         <div class="section-header">
-          <h2>Nuestras Tiendas</h2>
-          <p>Acceso directo a las mejores marcas del mercado.</p>
+          <h2>Nuestras Tiendas en la Galería</h2>
+          <p>Explora las mejores marcas y tiendas exclusivas de nuestro centro comercial virtual.</p>
         </div>
         <div class="grid">
           {
@@ -1693,8 +1756,8 @@ const currentYear = new Date().getFullYear();
     <section id="location" class="location-section">
       <div class="container">
         <div class="section-header">
-          <h2>Visita nuestras Tiendas en Galería la Trece</h2>
-          <p>Visítanos en el corazón comercial de Lima.</p>
+          <h2>Visita nuestras Tiendas Físicas en Galería La Trece</h2>
+          <p>Visítanos en nuestro centro comercial físico ubicado en el corazón comercial de Lima.</p>
         </div>
         <div class="map-container">
           <iframe
