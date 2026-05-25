@@ -20,6 +20,7 @@ import klabLogo from "../assets/stores/klab.webp";
 import promo1 from "../assets/promos/promo1.webp";
 import promo2 from "../assets/promos/promo2.webp";
 import promo3 from "../assets/promos/promo3.webp";
+import wasiLogo from "../assets/logo-wasi.webp";
 
 const stores = [
   {
@@ -39,6 +40,71 @@ const stores = [
     link: "https://www.wasi.digital/shop/be-london",
   },
   {
+    name: "K-Lab",
+    category: "Ropa",
+    icon: klabLogo,
+    description: "Prendas de vestir para la mujer moderna.",
+    color: "#203A3E",
+    link: "https://www.wasi.digital/shop/klab-moda",
+  },
+  {
+    name: "Aliada",
+    category: "Vestidos",
+    icon: aliadaLogo,
+    description: "Venta de vestidos para damas.",
+    color: "#171717",
+    link: "https://www.aliadachick.com/",
+  },
+  {
+    name: "Maldi",
+    category: "Ropa",
+    icon: maldiLogo,
+    description: "Venta de ropa para damas.",
+    color: "#F5F5DC",
+    link: "https://maldistore.com/",
+  },
+  {
+    name: "Nina",
+    category: "Ropa",
+    icon: ninaLogo,
+    description: "Venta de ropa para damas.",
+    color: "#171717",
+    link: "https://tiendasnina.com/",
+  },
+  {
+    name: "Be Segura",
+    category: "Bodys y Fajas",
+    icon: beseguraLogo,
+    description: "Venta de bodys y fajas moldeadoras.",
+    color: "#334155",
+    link: "https://besegura.com/",
+  },
+  {
+    name: "Jass",
+    category: "Ropa",
+    icon: jassLogo,
+    description: "Prendas de vestir para la mujer moderna.",
+    color: "#F87171",
+    link: "https://jassmodafemenina.com/",
+  },
+  {
+    name: "Emak",
+    category: "Ropa",
+    icon: emakLogo,
+    description: "Venta de ropa de cama y accesorios.",
+    color: "#40E0D0",
+    link: "https://tiendaemak.com/",
+  },
+  {
+    name: "Global Express Cargo",
+    category: "Envios",
+    icon: globalExpressLogo,
+    description:
+      "Servicio de transporte terrestre, courier aéreo internacional y mudanza.",
+    color: "#2563eb",
+    link: "https://global-expresscargo.com/",
+  },
+  {
     name: "Peru Decor",
     category: "Cortinas",
     icon: perudecorLogo,
@@ -55,23 +121,6 @@ const stores = [
     link: "https://www.cortinasantonella.com/",
   },
   {
-    name: "Global Express Cargo",
-    category: "Envios",
-    icon: globalExpressLogo,
-    description:
-      "Servicio de transporte terrestre, courier aéreo internacional y mudanza.",
-    color: "#2563eb",
-    link: "https://global-expresscargo.com/",
-  },
-  {
-    name: "Hamina",
-    category: "Ropa",
-    icon: haminaLogo,
-    description: "Ropa elegante para damas.",
-    color: "#d946ef",
-    link: "https://www.wasi.digital/shop/hamina",
-  },
-  {
     name: "Cortinas Perez",
     category: "Cortinas",
     icon: cortinasPerezLogo,
@@ -80,60 +129,12 @@ const stores = [
     link: "https://cortinasperez.com.pe/",
   },
   {
-    name: "Aliada",
-    category: "Vestidos",
-    icon: aliadaLogo,
-    description: "Venta de vestidos para damas.",
-    color: "#171717",
-    link: "https://www.aliadachick.com/",
-  },
-  {
-    name: "Be Segura",
-    category: "Bodys y Fajas",
-    icon: beseguraLogo,
-    description: "Venta de bodys y fajas moldeadoras.",
-    color: "#334155",
-    link: "https://besegura.com/",
-  },
-  {
-    name: "Nina",
+    name: "Hamina",
     category: "Ropa",
-    icon: ninaLogo,
-    description: "Venta de ropa para damas.",
-    color: "#171717",
-    link: "https://tiendasnina.com/",
-  },
-  {
-    name: "Maldi",
-    category: "Ropa",
-    icon: maldiLogo,
-    description: "Venta de ropa para damas.",
-    color: "#F5F5DC",
-    link: "https://maldistore.com/",
-  },
-  {
-    name: "Emak",
-    category: "Ropa",
-    icon: emakLogo,
-    description: "Venta de ropa de cama y accesorios.",
-    color: "#40E0D0",
-    link: "https://tiendaemak.com/",
-  },
-  {
-    name: "Jass",
-    category: "Ropa",
-    icon: jassLogo,
-    description: "Prendas de vestir para la mujer moderna.",
-    color: "#F87171",
-    link: "https://jassmodafemenina.com/",
-  },
-  {
-    name: "K-Lab",
-    category: "Ropa",
-    icon: klabLogo,
-    description: "Prendas de vestir para la mujer moderna.",
-    color: "#203A3E",
-    link: "https://www.wasi.digital/shop/klab-moda",
+    icon: haminaLogo,
+    description: "Ropa elegante para damas.",
+    color: "#d946ef",
+    link: "https://www.wasi.digital/shop/hamina",
   },
 ];
 
@@ -434,6 +435,53 @@ const currentYear = new Date().getFullYear();
         box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
       }
 
+      .whatsapp-tooltip {
+        position: absolute;
+        right: 80px;
+        top: 50%;
+        transform: translateY(-50%) translateX(10px);
+        background: #0f172a;
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border-radius: 12px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        white-space: nowrap;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+        pointer-events: none;
+      }
+
+      html:not(.dark) .whatsapp-tooltip {
+        background: #ffffff;
+        color: #0f172a;
+        border: 1px solid rgba(15, 23, 42, 0.1);
+      }
+
+      /* Tooltip Arrow */
+      .whatsapp-tooltip::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        transform: translateY(-50%);
+        border-width: 6px;
+        border-style: solid;
+        border-color: transparent transparent transparent #0f172a;
+      }
+
+      html:not(.dark) .whatsapp-tooltip::after {
+        border-color: transparent transparent transparent #ffffff;
+      }
+
+      .whatsapp-float:hover .whatsapp-tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(-50%) translateX(0) rotate(-10deg); /* Counteract the 10deg rotation of the parent */
+      }
+
       .whatsapp-float svg {
         width: 32px;
         height: 32px;
@@ -446,6 +494,9 @@ const currentYear = new Date().getFullYear();
           right: 20px;
           width: 56px;
           height: 56px;
+        }
+        .whatsapp-tooltip {
+          display: none !important;
         }
       }
 
@@ -942,6 +993,21 @@ const currentYear = new Date().getFullYear();
         font-size: 0.9rem;
       }
 
+      .footer-copyright-link {
+        color: inherit;
+        text-decoration: none;
+        transition: var(--transition);
+        opacity: 0.8;
+        display: inline-block;
+      }
+
+      .footer-copyright-link:hover {
+        color: #ffffff !important;
+        opacity: 1;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        transform: scale(1.02);
+      }
+
       /* Background Elements */
       .blob {
         position: fixed;
@@ -1002,6 +1068,248 @@ const currentYear = new Date().getFullYear();
           padding: 1rem;
         }
       }
+
+      /* Wasi Digital Section */
+      .wasi-section {
+        padding: 6rem 0;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .wasi-card {
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.05) 0%,
+          rgba(225, 29, 72, 0.05) 100%
+        );
+        border: 1px solid var(--border-current);
+        border-radius: 32px;
+        padding: 3.5rem;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 3rem;
+        align-items: center;
+        position: relative;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+      }
+
+      html.dark .wasi-card {
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.1) 0%,
+          rgba(225, 29, 72, 0.1) 100%
+        );
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+      }
+
+      .wasi-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(225, 29, 72, 0.3);
+        box-shadow: 0 30px 70px rgba(225, 29, 72, 0.15);
+      }
+
+      .wasi-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .wasi-badge {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        background: linear-gradient(135deg, #6366f1, var(--primary));
+        color: white;
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+      }
+
+      .wasi-info h2 {
+        font-size: 2.75rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, var(--text-current), #6366f1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      html.dark .wasi-info h2 {
+        background: linear-gradient(135deg, #ffffff, #818cf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .wasi-info p {
+        font-size: 1.15rem;
+        line-height: 1.7;
+        margin-bottom: 2.5rem;
+        opacity: 0.9;
+        color: var(--text-current);
+      }
+
+      .wasi-actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .wasi-btn-whatsapp {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 2.5rem;
+        background: #25d366;
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: var(--transition);
+        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .wasi-btn-whatsapp:hover {
+        transform: translateY(-3px);
+        background: #22c35e;
+        box-shadow: 0 15px 30px rgba(37, 211, 102, 0.45);
+      }
+
+      .wasi-btn-whatsapp svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .wasi-btn-web {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem 2.5rem;
+        background: transparent;
+        color: var(--text-current);
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition: var(--transition);
+        border: 2px solid var(--border-current);
+      }
+
+      .wasi-btn-web:hover {
+        transform: translateY(-3px);
+        background: var(--text-current);
+        color: var(--bg-current);
+        border-color: var(--text-current);
+      }
+
+      .wasi-image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .wasi-logo-wrapper {
+        position: relative;
+        padding: 2.5rem;
+        background: var(--glass-current);
+        border: 1px solid var(--border-current);
+        border-radius: 24px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: float 6s ease-in-out infinite;
+        transition: var(--transition);
+        max-width: 280px;
+      }
+
+      .wasi-logo-img {
+        width: 100%;
+        height: auto;
+        max-height: 120px;
+        object-fit: contain;
+        filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+      }
+
+      /* Glow background effect behind logo */
+      .wasi-logo-wrapper::after {
+        content: "";
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        background: radial-gradient(
+          circle,
+          rgba(99, 102, 241, 0.25) 0%,
+          transparent 70%
+        );
+        z-index: -1;
+        opacity: 1;
+        transition: var(--transition);
+      }
+
+      .wasi-card:hover .wasi-logo-wrapper {
+        border-color: rgba(99, 102, 241, 0.3);
+        box-shadow: 0 20px 45px rgba(99, 102, 241, 0.15);
+      }
+
+      .wasi-card:hover .wasi-logo-wrapper::after {
+        transform: scale(1.1);
+      }
+
+      @media (max-width: 992px) {
+        .wasi-card {
+          grid-template-columns: 1fr;
+          gap: 4rem;
+          padding: 2.5rem;
+        }
+
+        .wasi-info {
+          align-items: center;
+          text-align: center;
+        }
+
+        .wasi-actions {
+          justify-content: center;
+        }
+
+        .wasi-image-container {
+          order: -1;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .wasi-section {
+          padding: 4rem 0;
+        }
+        .wasi-card {
+          padding: 1.75rem;
+          border-radius: 24px;
+          gap: 2.5rem;
+        }
+        .wasi-info h2 {
+          font-size: 2rem;
+        }
+        .wasi-info p {
+          font-size: 1rem;
+          margin-bottom: 2rem;
+        }
+        .wasi-actions {
+          flex-direction: column;
+        }
+        .wasi-btn-whatsapp,
+        .wasi-btn-web {
+          justify-content: center;
+          width: 100%;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1012,6 +1320,7 @@ const currentYear = new Date().getFullYear();
     <div class="mobile-menu" id="mobile-menu">
       <a href="#home" class="nav-link mobile-nav-link">Inicio</a>
       <a href="#stores" class="nav-link mobile-nav-link">Tiendas</a>
+      <a href="#wasi-digital" class="nav-link mobile-nav-link">Crear Tienda</a>
       <a href="#location" class="nav-link mobile-nav-link">Ubicación</a>
     </div>
 
@@ -1027,6 +1336,7 @@ const currentYear = new Date().getFullYear();
         <div class="nav-menu">
           <a href="#home" class="nav-link">Inicio</a>
           <a href="#stores" class="nav-link">Tiendas</a>
+          <a href="#wasi-digital" class="nav-link">Crear Tienda</a>
           <a href="#location" class="nav-link">Ubicación</a>
         </div>
 
@@ -1327,10 +1637,63 @@ const currentYear = new Date().getFullYear();
       </div>
     </section>
 
+    <section id="wasi-digital" class="wasi-section">
+      <div class="container">
+        <div class="wasi-card">
+          <div class="wasi-info">
+            <span class="wasi-badge">¡Digitaliza tu Negocio!</span>
+            <h2>Lleva tu negocio al mundo digital</h2>
+            <p>
+              Crea una tienda virtual moderna, rápida y optimizada con Wasi
+              Digital. Sube tus productos y crea tu catálogo online, gestiona
+              tus ventas de manera simple y recibe pedidos directamente en tu
+              WhatsApp. ¿Listo para dar el gran paso?
+            </p>
+            <div class="wasi-actions">
+              <a
+                href="https://wa.me/51958171394?text=Hola%20Wasi%20Digital,%20deseo%20obtener%20informaci%C3%B3n%20para%20crear%20mi%20tienda%20virtual."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="wasi-btn-whatsapp"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                  ></path>
+                </svg>
+                Solicita tu tienda virtual
+              </a>
+              <a
+                href="https://wasi.digital"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="wasi-btn-web"
+              >
+                Visita nuestra web
+              </a>
+            </div>
+          </div>
+          <div class="wasi-image-container">
+            <div class="wasi-logo-wrapper">
+              <Image
+                src={wasiLogo}
+                alt="Wasi Digital Logo"
+                class="wasi-logo-img"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="location" class="location-section">
       <div class="container">
         <div class="section-header">
-          <h2>Nuestra Ubicación</h2>
+          <h2>Visita nuestras Tiendas en Galería la Trece</h2>
           <p>Visítanos en el corazón comercial de Lima.</p>
         </div>
         <div class="map-container">
@@ -1447,7 +1810,14 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <p>
-        &copy; {currentYear} Wasi Digital. Todos los derechos reservados.
+        <a
+          href="https://wasi.digital"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer-copyright-link"
+        >
+          &copy; {currentYear} Wasi Digital. Todos los derechos reservados.
+        </a>
       </p>
     </div>
   </footer>
@@ -1459,6 +1829,7 @@ const currentYear = new Date().getFullYear();
     rel="noopener noreferrer"
     aria-label="Contactar por WhatsApp"
   >
+    <span class="whatsapp-tooltip">Contactar con la galería</span>
     <svg
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
@@ -1553,7 +1924,7 @@ const currentYear = new Date().getFullYear();
       });
     }, observerOptions);
 
-    document.querySelectorAll(".store-card").forEach((card) => {
+    document.querySelectorAll(".store-card, .wasi-card").forEach((card) => {
       (card as HTMLElement).style.opacity = "0";
       (card as HTMLElement).style.transform = "translateY(40px)";
       observer.observe(card);
